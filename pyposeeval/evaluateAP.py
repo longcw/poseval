@@ -1,7 +1,7 @@
 import numpy as np
 
-import eval_helpers
-from eval_helpers import Joint
+from . import eval_helpers
+from .eval_helpers import Joint
 
 def computeMetrics(scoresAll, labelsAll, nGTall):
     apAll = np.zeros((nGTall.shape[0] + 1, 1))

@@ -1,8 +1,8 @@
 import numpy as np
-
-import eval_helpers
-from eval_helpers import Joint
 import motmetrics as mm
+
+from . import eval_helpers
+from .eval_helpers import Joint
 
 
 def computeMetrics(gtFramesAll, motAll, outputDir, bSaveAll, bSaveSeq):

@@ -1,13 +1,15 @@
+import sys
 import os
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
 import numpy as np
 import argparse
 from collections import OrderedDict
 
-from evaluateAP import evaluateAP
-from evaluateTracking import evaluateTracking
-
-import eval_helpers
-from eval_helpers import Joint
+from pyposeeval.evaluateAP import evaluateAP
+from pyposeeval.evaluateTracking import evaluateTracking
+from pyposeeval import eval_helpers
+from pyposeeval.eval_helpers import Joint
 
 
 def evaluate(ground_truth_dir, predictions_dir, output_dir, eval_pose, eval_tracking, save_per_seq=False):
