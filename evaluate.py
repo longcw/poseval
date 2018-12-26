@@ -44,6 +44,9 @@ def evaluate(ground_truth_dir, predictions_dir, output_dir, eval_pose, eval_trac
         # print AP
         print("Average Precision (AP) metric:")
         headers, values = eval_helpers.printTable(apAll)
+        with open(os.path.join(output_dir, 'metric_pose_estimation.txt'), 'w') as f:
+            f.write(headers)
+            f.write(values)
         update_results(headers, values)
 
     if eval_tracking:
@@ -64,6 +67,9 @@ def evaluate(ground_truth_dir, predictions_dir, output_dir, eval_pose, eval_trac
         # print AP
         print("Multiple Object Tracking (MOT) metrics:")
         headers, values = eval_helpers.printTable(metrics, motHeader=True)
+        with open(os.path.join(output_dir, 'metric_pose_tracking.txt'), 'w') as f:
+            f.write(headers)
+            f.write(values)
 
     return results_dict, results_dict.get('Total', 0)
 
